@@ -1,2 +1,2 @@
-userId: 
-userPassword: 
+userId: choi
+userPassword: choi2

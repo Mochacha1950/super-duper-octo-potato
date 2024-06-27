@@ -17,7 +17,8 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        int inputNumber;
+        String inputNumber;
+        int inputNumber2 = 0;
         String diplayInput;
         String firstOrNot = null;
         String userId;
@@ -53,19 +54,17 @@ public class Main {
             	
             }else if(firstOrNot.toLowerCase().equals("no")) {
             	// take USERID and PASSWORD
-                bw.write("\ninput user ID and password");
+                bw.write("input user ID and password\n");
                 bw.flush();
                 
                 // input userID segment
-                System.out.print("userID:");
-                diplayInput = scanner.nextLine();
-                bw.write("\nuserID:" + diplayInput);
+                diplayInput = br.readLine();
+                bw.write("userID:" + diplayInput + "\n");
                 bw.flush();
                 
                 // input password segment
-                System.out.print("password:");
-                diplayInput = scanner.nextLine();
-                bw.write("password:" + diplayInput);
+                diplayInput = br.readLine();
+                bw.write("password:" + diplayInput + "\n");
                 bw.flush();
                 do {
                 	
@@ -74,40 +73,40 @@ public class Main {
                 bw.write("\n1) see your user information");
                 bw.write("\n2) do something bad");
                 bw.write("\n3) do something good");
-                bw.write("\n4) EXIT");
+                bw.write("\n4) EXIT \n");
                 bw.flush();
                 
                 //input number
-                inputNumber = scanner.nextInt();
+                inputNumber = br.readLine();
                 
         	    	switch(inputNumber){
-        	    	case 1:
-        	    		
+        	    	case "1":
         	    		FileProcessing.seeUserInformation();
-        	    		
         	    		break;
-        	    	case 2:
+        	    	case "2":
         	    		System.out.print("do something bad");
         	    		break;
-        	    	case 3:
+        	    	case "3":
         	    		System.out.print("do something good");
         	    		break;
-        	    	case 4:
+        	    	case "4":
         	    		// create a file that save userInfo *this function to be conpleted in the future
-        	            FileProcessing.fileCreate(userInformation);
+        	            //FileProcessing.fileCreate(userInformation);
         	    		return;
         	    	}
-        	    	// to consume ENTER
-        	    	scanner.nextLine();
         	    	
-        	    	bw.write("\n**press enter");
-        	    	bw.flush();
-        	    	// take newline character
-        	    	scanner.nextLine();
-        	    
-                }while(inputNumber < 4);    
+        	    	try {
+            	    	inputNumber2 = Integer.valueOf(inputNumber);
+        	    	}catch(Exception e) {
+        	    		bw.write("what you typed is not a number\n");
+        	    		bw.flush();
+        	    		inputNumber2 = 0;
+        	    	}
+        	    	
+        	    	
+                }while(inputNumber2 < 4);    
             }else {
-            	bw.write("\npardon?");
+            	bw.write("pardon?\n");
             	bw.flush();
             	firstOrNot = "";
             }

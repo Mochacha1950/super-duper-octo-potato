@@ -27,8 +27,10 @@ public class FileProcessing {
 	public static void seeUserInformation() throws IOException{
 		
 		BufferedReader file = new BufferedReader(new FileReader("UserInformation.txt"));
-		
-		System.out.println(file.readLine());
+		String contents;
+		while((contents = file.readLine())!=null) {
+			System.out.println(contents);
+		}
 		file.close();
 		
 	}
