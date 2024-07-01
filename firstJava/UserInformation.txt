@@ -1,2 +1,0 @@
-userId: choi
-userPassword: choi2
