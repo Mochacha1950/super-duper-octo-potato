@@ -35,6 +35,7 @@ public class Main {
             	
             	bw.write("Let`s register");
             	bw.write("\nfill the beneath forms");
+            	
             	bw.write("\nuserid:");
             	bw.flush();
             	
