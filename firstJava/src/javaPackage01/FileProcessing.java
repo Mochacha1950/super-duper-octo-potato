@@ -14,9 +14,8 @@ import java.io.FileReader;
 
 public class FileProcessing {
 	
-	public static void fileCreate(String contents){
+	public static void fileCreate(String[] contents){
 		
-		contents.trim()
 		SQLiteConnection.insertData(contents);
 	
 	}
