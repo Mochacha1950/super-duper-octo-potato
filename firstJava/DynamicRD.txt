@@ -1,0 +1,13 @@
+●required functionalities
+
+authentication
+
+balance inquiry
+
+cash withdrawal
+
+transaction history.
+
+
+
+●deploy?? do i have to do it
