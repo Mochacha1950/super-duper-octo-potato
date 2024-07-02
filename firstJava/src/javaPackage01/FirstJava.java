@@ -19,7 +19,6 @@ public class FirstJava {
         String firstOrNot = null;
         String userId;
         String userPassword;
-        String userInformation = "";
                 
         do {
         	// take USERID and PASSWORD
@@ -41,13 +40,11 @@ public class FirstJava {
             	userId = br.readLine();
             	userArray[UserInfoArray.userID] = userId;
             	
-            	
             	bw.write("\npassword:");
             	bw.flush();
             	
             	userPassword = br.readLine();
             	userArray[UserInfoArray.userPASSWORD] = userPassword;
-            	
             	
             	// create UserInfoFile
             	FileProcessing.fileCreate(userArray);
@@ -69,7 +66,7 @@ public class FirstJava {
                 bw.write("password:" + diplayInput + "\n");
                 bw.flush();
                 do {
-                	
+                
                 // show menu
                 bw.write("\n  **input any number to choose action to have");
                 bw.write("\n1) see your user information");
@@ -104,7 +101,6 @@ public class FirstJava {
         	    		bw.flush();
         	    		inputNumber2 = 0;
         	    	}
-        	    	
         	    	
                 }while(inputNumber2 < 4);    
             }else {

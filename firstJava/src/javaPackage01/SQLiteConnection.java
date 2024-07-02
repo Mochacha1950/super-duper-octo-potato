@@ -1,6 +1,5 @@
 package javaPackage01;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,16 +12,10 @@ public final class SQLiteConnection {
         
     	Connection con = null;
     	try {
-            // Database parameters
-//    		String dbPath = "db/atm.db"; // Relative path
-//            String absolutePath = new File(dbPath).getAbsolutePath();
-//            String url = "jdbc:sqlite:" + absolutePath;
-    		// Load the SQLite JDBC driver (necessary for some setups)
-            
+    		
 			Class.forName("org.sqlite.JDBC");
 			
     		String url = "jdbc:sqlite:db/atm.db";
-            
 
             // Create a connection to the database
             con = DriverManager.getConnection(url);
