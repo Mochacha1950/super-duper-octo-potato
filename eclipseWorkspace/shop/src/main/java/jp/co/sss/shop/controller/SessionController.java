@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import jp.co.sss.shop.form.LoginForm;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.ui.Model;
 
 @Controller
 public class SessionController {
@@ -42,6 +42,21 @@ public class SessionController {
 		System.out.println("ユーザーパスワード"+form.getUserPassword());
 		return "session/loginUsingForm";
 	}
+	
+	
+	@RequestMapping(path = "/loginOnRequest", method = RequestMethod.GET)
+	public String loginOnRequest() {
+		return "session/loginOnRequest";
+	}
+	
+	@RequestMapping(path = "/doLoginOnRequest", method = RequestMethod.POST)
+	public String doLoginOnRequest(LoginForm form, Model model) {
+		//TODO: process POST request
+		model.addAttribute("userId", form.getUserId());
+		return "session/loginOnRequest";
+	}
+	
+	
 	
 	
 }	
