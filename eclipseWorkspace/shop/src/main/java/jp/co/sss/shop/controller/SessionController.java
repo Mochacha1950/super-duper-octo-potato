@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import jp.co.sss.shop.form.LoginForm;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -27,5 +30,18 @@ public class SessionController {
 		System.out.println("ユーザーPASSWORD:" + userPassword);
 		return "session/login";
 	}
+	
+	@RequestMapping(path = "/loginUsingForm", method = RequestMethod.GET)
+	public String loginUsingForm() {
+		return "session/loginUsingForm";
+	}
+	
+	@RequestMapping(path = "/doLoginUsingForm", method = RequestMethod.POST)
+	public String doLoginUsingForm(LoginForm form) {
+		System.out.println("ユーザーID"+form.getUserId());
+		System.out.println("ユーザーパスワード"+form.getUserPassword());
+		return "session/loginUsingForm";
+	}
+	
 	
 }	
