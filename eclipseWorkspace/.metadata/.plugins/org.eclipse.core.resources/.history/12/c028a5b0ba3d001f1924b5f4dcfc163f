@@ -1,0 +1,20 @@
+package lesson29;
+
+public class SmartPhone2903 extends Phone2903{
+	/** Eメールアドレス*/
+	private String email;
+	
+	/**
+	 * コンストラクタ
+	 * 
+	 * @param email Eメールアドレス
+	 */
+	public SmartPhone2903(String email) {
+		this.email = email;
+	}
+	
+	public SmartPhone2903(String email) {
+		this.email = email;
+	}
+	
+}

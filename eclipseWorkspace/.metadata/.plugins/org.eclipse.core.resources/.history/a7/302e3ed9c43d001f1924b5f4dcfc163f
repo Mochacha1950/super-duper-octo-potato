@@ -1,0 +1,82 @@
+package lesson29;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class EmployeeManagementSystem2904 implements ManagementSystem2904{
+
+	List<String> employeeNames = new ArrayList<>();
+	
+	@Override
+	public void registName() {
+		// TODO Auto-generated method stub
+		String[] groupOfNames = new String[] {"tanaka","suzuki","sato","murata","watabe"};		
+		employeeNames = Arrays.asList(groupOfNames);
+	}
+	
+	/**
+	 * ユーザーId入力メソッド
+	 * 
+	 */
+	@Override
+	public int inputId() {
+		// TODO Auto-generated method stub
+		
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String inputEmployeeId = null;
+		int parsedToIntId = 0;
+		
+		try {
+			inputEmployeeId = reader.readLine();
+			inputEmployeeId.trim();
+		}catch(IOException e) {
+			System.out.println("入力処理に失敗した。");
+		}
+		
+		
+		if (checkValidCharacterRange(inputEmployeeId)) {
+			try {
+				parsedToIntId = Integer.parseInt(inputEmployeeId);
+			}catch(Exception e) {
+				System.out.println("無効なIdです。 該当Id:" + parsedToIntId);
+				return parsedToIntId = -2;
+			}
+			return parsedToIntId;
+		}else {
+			System.out.println("0~4の番号以外の値が入力されました。");
+			return -1;
+		}
+		
+	}
+	
+	public boolean checkValidCharacterRange(String inputString) {
+		
+		int afterParsing = Integer.parseInt(inputString)
+		
+		if (afterParsing >= 0 || afterParsing <= 4) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	@Override
+	public void showName(int id) {
+		// TODO Auto-generated method stub
+		//引数で受け取ったIDを元にemployeeNamesから該当する社員を検索し出力
+		
+		try {
+			System.out.println(employeeNames.get(id));
+		}catch(Exception e) {
+			System.out.println();
+			System.out.println(e.getMessage());
+		}
+		
+		
+	}
+
+}

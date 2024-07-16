@@ -1,0 +1,9 @@
+package lesson25;
+
+public class InputPasswordException2502 extends Exception {
+	
+	public InputPasswordException2502(String message) {
+		
+	}
+	
+}

@@ -1,0 +1,17 @@
+package jp.co.sss.shop.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class SessionController {
+	@RequestMapping(path = "/login", method = RequestMethod.GET)
+	public String login() {
+		return "session/login";
+	}
+	
+	@RequestMapping
+	public String doLoginGet(Integer userId, String userPassword) {
+		return "session/login";
+	}
+}	

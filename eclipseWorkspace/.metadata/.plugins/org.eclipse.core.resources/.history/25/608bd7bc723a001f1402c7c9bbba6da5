@@ -1,0 +1,29 @@
+package ddafsda;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//SubClass obj1 = new SubClass(10); // Calls no-argument constructors
+        //SubClass obj2 = new SubClass(10); // Calls constructors with arguments
+		
+		ArrayList<String> a = new ArrayList<>();
+		
+		a.add("3");
+		
+		
+		toString(a);
+		
+		
+	}
+	
+	
+	@Override
+	public String toString() {
+		
+		return super.toString().substring(0,2);
+	}
+
+}

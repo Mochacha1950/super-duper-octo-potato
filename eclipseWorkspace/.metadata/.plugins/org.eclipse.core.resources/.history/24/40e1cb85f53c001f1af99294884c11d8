@@ -1,0 +1,11 @@
+package lesson25;
+
+public class Input2502 {
+
+	public void inputPassword()throws IOException, InputPasswordException2502 {
+		System.out.println("パスワードを入力してください (4文字以上、8文字以内)");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+			
+	}
+
+}

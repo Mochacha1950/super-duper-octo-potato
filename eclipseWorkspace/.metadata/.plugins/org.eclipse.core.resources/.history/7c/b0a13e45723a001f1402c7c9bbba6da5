@@ -1,0 +1,21 @@
+package ddafsda;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//SubClass obj1 = new SubClass(10); // Calls no-argument constructors
+        //SubClass obj2 = new SubClass(10); // Calls constructors with arguments
+		
+		
+		
+	}
+	
+	
+	@Override
+	public String toString(Object object) {
+		
+		return super.toString().substring(0,2);
+	}
+
+}

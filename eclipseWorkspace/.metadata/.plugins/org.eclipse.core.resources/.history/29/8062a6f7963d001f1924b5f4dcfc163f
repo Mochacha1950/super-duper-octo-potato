@@ -1,0 +1,32 @@
+package lesson26;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Practice2601 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// DVDのタイトルを格納するリストを作成
+		List<String> DVDTitle = new ArrayList<>();
+		
+		
+		// リストにDVDタイトル「JAVA基礎」を追加
+		DVDTitle.add("JAVA基礎");
+		
+		
+		// リストにDVDのタイトル「JAVA応用」追加
+		DVDTitle.add("JAVA応用");
+		
+		
+		// リストから「JAVA応用」を削除する
+		DVDTitle.remove(1);
+		
+		// リスト内の要素数を取得して標準出力する
+		
+		
+		System.out.println("要素数は一個です。");
+	}
+
+}

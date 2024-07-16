@@ -1,0 +1,33 @@
+package lesson26;
+import java.util. HashMap;
+import java.util.Map;
+public class Practice2602 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 人名とその人が生まれた年の元号を格納するマップを生成する
+		Map<String, String> a = new HashMap<>();
+		
+		
+		
+		// mapにキー 「田中太郎」、 値 「昭和」 を追加する 
+		a.put("田中太郎", "昭和");
+		
+		// mapにキー 「鈴木二郎」、 値 「平成」 を追加する 
+		// mapにキー「渡辺花子」、値 「平成」 を追加する 
+		System.out.print("田中太郎さんは"); 
+		// 田中太郎さんが生まれた年の元号を標準出力する 
+		System.out.print("鈴木二郎さんは"); 
+		// 鈴木二郎さんが生まれた年の元号を標準出力する 
+		System.out.print("渡辺花子さんは"); 
+		// 渡辺花子さんが生まれた年の元号を標準出力する
+		
+//		System.out.println(中太郎さんは昭和生まれです。 
+//				鈴木二郎さんは平成生まれです。 
+//				渡辺花子さんは平成生まれです。
+//				);
+		
+		
+	}
+
+}

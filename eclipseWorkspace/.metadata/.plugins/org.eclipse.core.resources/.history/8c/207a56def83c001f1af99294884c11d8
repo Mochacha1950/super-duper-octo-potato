@@ -1,0 +1,10 @@
+package lesson25;
+
+public class Practice2502 {
+	public static void main(String[] args) {
+		Input2502 a = new Input2502();
+		
+		a.inputPassword();
+		
+	}
+}

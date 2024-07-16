@@ -1,0 +1,14 @@
+package gujgyug;
+
+public class MobileComputer implements Computer {
+	
+	
+	public void showMessage() {
+		
+	};
+	
+    public void setCommand(String command) {
+		
+	};
+	
+}

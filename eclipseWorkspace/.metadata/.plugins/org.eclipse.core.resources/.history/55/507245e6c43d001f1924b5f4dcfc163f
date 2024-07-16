@@ -1,0 +1,19 @@
+package lesson29;
+
+public class Practice2904 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		EmployeeManagementSystem2904 a = new EmployeeManagementSystem2904();
+		
+		a.registName();
+		
+		int b = a.inputId();
+		if (b != -1 && b != -2) {
+			a.showName(b);
+		}
+		
+		
+	}
+
+}

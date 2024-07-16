@@ -1,0 +1,5 @@
+package lesson29;
+
+public class SmartPhone2903 extend Phone2903{
+
+}
