@@ -5,14 +5,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<div>ログイン</div>
-	<div th:text=${userId}></div>
-	<form method = "post" th:action="@{/doLoginOnRequest}">
-	ユーザーID<input type = "number" name = "userId"/>
-	ユーザーパスワード<input type = "password" name = "userPassword"/>
+	<form method="post" th:action="@{doLoginOnSession}">
+	ユーザID:<input type = "number" name = "userId"/>
+	ユーザパスワード:<input type = "password" name = "userPassword"/>
 	<input type = "submit" value = "ログイン"/>
 	</form>
-
 </body>
 </html>

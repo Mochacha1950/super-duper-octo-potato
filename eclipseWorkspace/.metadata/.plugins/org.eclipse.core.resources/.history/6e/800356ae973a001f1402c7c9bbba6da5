@@ -1,5 +1,0 @@
-package gujgyug;
-
-public class MobileComputer implements Computer {
-	
-}

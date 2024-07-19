@@ -9,6 +9,8 @@ import jp.co.sss.shop.form.LoginForm;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
+import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 public class SessionController {
@@ -56,7 +58,27 @@ public class SessionController {
 		return "session/loginOnRequest";
 	}
 	
+	@RequestMapping(path = "/loginOnSession", method = RequestMethod.GET)
+	public String loginOnSession() {
+		return "session/loginOnSession";
+	}
 	
+	@RequestMapping(path = "/doLoginOnSession", method = RequestMethod.POST)
+	public String doLoginOnSession(LoginForm form, HttpSession session) {
+		if(form.getUserId()==123) {
+			//入力したユーザIDをセッション属性userIdとしてセッションスコープに保存
+			session.setAttribute("userId", form.getUserId());
+			return "redirect:/";
+		} else {
+			return "session/loginOnSession";
+		}
+	}
 	
+	@RequestMapping(path = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		//セッションの破棄
+		session.invalidate();
+		return "redirect:/";
+	}
 	
 }	

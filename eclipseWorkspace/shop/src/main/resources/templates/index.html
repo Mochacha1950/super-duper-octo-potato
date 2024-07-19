@@ -2,18 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>title title</title>
+<title>トップページ</title>
 </head>
 <body>
-	<!--/* asssdsssdsss */-->
+	<!--/* コメント */-->
 	<div>トップページ</div>
-	<div>
-	<li>In another bowl, mix eggs, milk, and oil.</li>
-    <li>Stir both mixtures together.</li>
-    <li>Fill muffin tray 3/4 full.</li>
-	</div>
 	
-	<div><a th:href="@{/before}">click here to transfer to before page</a></div>
-	<!--/* <a th:href="@{session/login}">click here to transfer to login page</a> */-->
+	<div th:text="${session.userId}"></div>
+	<a th:href="@{/loginOnSession}">ログイン</a>
+	<a th:href="@{/logout}">ログアウト</a>
+	<br>
+	<a th:href="@{/items/findAll}">全体検索</a>
 </body>
 </html>

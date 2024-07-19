@@ -1,9 +1,0 @@
-package lesson25;
-
-public class InputPasswordException2502 throws Exception {
-	
-	public InputPasswordException2502(String) {
-		
-	}
-	
-}

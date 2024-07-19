@@ -1,8 +1,0 @@
-package lesson29;
-
-public class SmartPhone2903 extends Phone2903{
-	/** Eメールアドレス*/
-	private String email;
-	
-	
-}
