@@ -7,4 +7,10 @@ import jp.co.sss.shop.entity.Item;
 
 public interface ItemRepository extends JpaRepository<Item, Integer>{
 	List<Item> findAllByOrderByPriceDesc();
+	List<Item> findByPrice(Integer price);
+	List<Item> findByName(String name);
+	List<Item> findByNameAndPrice(String name, Integer price);
+	List<Item> findByNameOrPrice(String name, Integer price);
+	
+	List<Item> findByNameContaining(String name);
 }

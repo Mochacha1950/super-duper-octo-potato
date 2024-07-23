@@ -20,5 +20,9 @@
 <td th:text="${item.price}"></td>
 </tr>
 </table>
+
+<a th:href="@{/items/create/input}">戻る(登録した場合)</a>
+<!-- Back Button -->
+<button onclick="window.history.back()">Back</button>
 </body>
 </html>
