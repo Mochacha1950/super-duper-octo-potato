@@ -131,4 +131,47 @@ public class ItemController {
 		return "items/item";
 	}
 	
+	@RequestMapping("/items/update/input/{id}")
+	public String updateInput(@PathVariable int id, Model model) {
+		Item item = repository.getReferenceById(id);
+		ItemBean itembean = new ItemBean();
+		
+		BeanUtils.copyProperties(item, itembean);
+		
+		model.addAttribute("item", itembean);
+		
+		return "items/update_input";
+	}
+	
+	@RequestMapping(path = "/items/update/complete/{id}", method = RequestMethod.POST)
+	public String updateComplete(@PathVariable int id, ItemForm form, Model model) {
+		Item item = repository.getReferenceById(id);
+		BeanUtils.copyProperties(form, item, "id");
+		item = repository.save(item);
+		
+		ItemBean itembean = new ItemBean();
+		BeanUtils.copyProperties(item, itembean);
+		
+		model.addAttribute("item", itembean);
+		
+		return "items/item";
+	}
+	
+	@RequestMapping("/items/delete/input")
+	public String deleteInput(Model model) {
+		List<ItemBean> itemBeanList = listCopy.copyItemToBean(repository.findAll());
+		model.addAttribute("items", itemBeanList);
+		return "items/delete_input";
+	}
+	
+	@RequestMapping(path = "/items/delete/complete", method = RequestMethod.POST)
+	public String deleteComplete(ItemForm form) {
+		
+		
+		repository.deleteById(form.getId());
+		
+		
+		return "redirect:/items/findAll";
+	}
+	
 }

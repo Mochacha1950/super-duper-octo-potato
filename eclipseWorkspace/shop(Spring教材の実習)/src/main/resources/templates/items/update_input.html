@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form method = "post" th:action="@{/items/update/complete/} + ${item.id}">
+	<table>
+		<tr>
+			<th th:text = "${item.name}"></th>
+			<th th:text = "${item.price}"></th>
+		</tr>
+		<tr>	
+			<td><input type = "text" name = "name" th:value = "${item.name}"/></td>
+			<td><input type = "text" name = "price" th:value = "${item.price}"/></td>
+		</tr>
+	</table>
+	<input type = "submit" value = "submit">
+</form>
+
+</body>
+</html>
