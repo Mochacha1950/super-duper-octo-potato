@@ -10,6 +10,7 @@
 	
 	<div th:text="${session.userId}"></div>
 	<a th:href="@{/loginOnSession}">ログイン</a>
+	<a th:href="@{/loginWithValidation}">入力チェックログイン</a>
 	<a th:href="@{/logout}">ログアウト</a>
 	<br>
 	<a th:href="@{/items/findAll}">全体検索</a>
@@ -49,5 +50,8 @@
 	<br>
 	
 	<a th:href="@{/items/searchWithNamedQuery/1}">NamedQueryによる検索(1)</a>
+	
+	
+	
 </body>
 </html>

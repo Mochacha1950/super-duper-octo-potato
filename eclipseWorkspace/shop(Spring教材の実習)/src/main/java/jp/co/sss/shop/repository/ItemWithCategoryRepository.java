@@ -15,4 +15,7 @@ public interface ItemWithCategoryRepository extends JpaRepository<ItemWithCatego
 	@Query("select i from ItemWithCategory i where i.id = :id")
 	public List<ItemWithCategory> findByIdQuery(@Param("id") Integer id);
 	
+	@Query("select i from ItemWithCategory i where i.price >=" + "(select avg(i2.price) from ItemWithCategory i2)")
+	public List<ItemWithCategory> findByPriceGreaterThanEqualAVGPriceQuery();
+	
 }

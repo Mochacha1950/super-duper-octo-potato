@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body th:object="${loginFormWithAnnotation}">
+	
+	<div>ログイン</div>
+	
+	<ul>
+		<li th:each="error:${#fields.detailedErrors()}">
+		<span th:text="${error.message}"></span>
+		</li>
+	</ul>
+	
+	<form method = "post" th:action="@{/loginWithAnnotation}">
+		ユーザーID<input type = "text" th:field="*{userId}"/>
+		<br>
+		ユーザーパスワード<input type = "password" th:field="*{userPassword}"/>
+		<br>
+		<input type = "submit" value = "button"/>
+	</form>
+	
+</body>
+</html>

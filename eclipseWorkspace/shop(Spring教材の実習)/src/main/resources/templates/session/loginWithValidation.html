@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>入力チェックが挟んだログイン</title>
+</head>
+<body>
+
+<div>ログイン</div>
+	<form method="post" th:action="@{/loginWithValidation}" th:object="${loginFormWithValidation}">
+		ユーザーID<input type = "text" th:field="*{userId}"/>
+		<span th:errors = "*{userId}"></span><br>
+		ユーザーパスワード<input type = "password" th:field="*{userPassword}"/>
+		<span th:errors = "*{userPassword}"></span><br>
+		<input type = "submit" value = "ログイン"/>
+	</form>
+
+</body>
+</html>
