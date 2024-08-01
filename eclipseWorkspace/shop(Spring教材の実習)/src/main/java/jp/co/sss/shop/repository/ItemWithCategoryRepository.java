@@ -2,6 +2,8 @@ package jp.co.sss.shop.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,4 +20,7 @@ public interface ItemWithCategoryRepository extends JpaRepository<ItemWithCatego
 	@Query("select i from ItemWithCategory i where i.price >=" + "(select avg(i2.price) from ItemWithCategory i2)")
 	public List<ItemWithCategory> findByPriceGreaterThanEqualAVGPriceQuery();
 	
+	public Page<ItemWithCategory> findByNameContaining(String name, Pageable pageable);
+	
 }
+

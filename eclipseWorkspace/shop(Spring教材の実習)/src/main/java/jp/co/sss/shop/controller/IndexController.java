@@ -1,6 +1,7 @@
 package jp.co.sss.shop.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -25,6 +26,7 @@ public class IndexController {
 	public String sampleTransition() {
 		return "sample_transition";
 	}
+	
 	@RequestMapping(path = "/index_f")
 	public String indexForward() {
 		return "forward:/";
@@ -33,6 +35,11 @@ public class IndexController {
 	@RequestMapping(path = "/index_r")
 	public String indexRedirect() {
 		return "redirect:/";
+	}
+	
+	@GetMapping("/layout_view")
+	public String layoutView() {
+		return "layout_view";
 	}
 	
 }

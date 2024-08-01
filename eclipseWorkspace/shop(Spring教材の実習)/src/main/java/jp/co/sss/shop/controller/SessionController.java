@@ -3,6 +3,9 @@ package jp.co.sss.shop.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import jp.co.sss.shop.form.LoginForm;
 import jp.co.sss.shop.form.LoginFormWithAnnotation;
@@ -86,7 +89,9 @@ public class SessionController {
 	}
 	
 	@RequestMapping(path = "/loginWithValidation", method = RequestMethod.GET)
-	public String loginWithValidation(@ModelAttribute LoginFormWithValidation form) {
+	public String loginWithValidation(@ModelAttribute LoginFormWithValidation form, Model model) {
+		String userInput = "<script>alert('Hello!')</script>";
+		model.addAttribute("userInput",userInput);
 		return "session/loginWithValidation";
 	}
 	
@@ -99,7 +104,6 @@ public class SessionController {
 		if(form.getUserId() == 123) {
 			session.setAttribute("userId", form.getUserId());
 			return "redirect:/";
-			
 		} else {
 			return "/session/loginWithValidation";
 		}

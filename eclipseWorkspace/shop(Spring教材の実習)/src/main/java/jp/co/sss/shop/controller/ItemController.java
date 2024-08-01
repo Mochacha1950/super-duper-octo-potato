@@ -10,9 +10,11 @@ import jakarta.servlet.http.HttpSession;
 import jp.co.sss.shop.repository.ItemRepository;
 import jp.co.sss.shop.utils.BeanListCopy;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import jp.co.sss.shop.bean.ItemBean;
 import jp.co.sss.shop.entity.Item;
@@ -164,12 +166,18 @@ public class ItemController {
 	
 	@RequestMapping(path = "/items/delete/complete", method = RequestMethod.POST)
 	public String deleteComplete(ItemForm form) {
-		
-		
 		repository.deleteById(form.getId());
-		
-		
 		return "redirect:/items/findAll";
+	}
+	
+	@GetMapping("/items/findAllJs")
+	public String showItemListJs(Model model){
+		model.addAttribute("items", repository.findAll());
+		
+		//実行時の日付を取得してリクエスト属性に保存
+		model.addAttribute("now", new Date());
+		
+		return "items/item_list_js";
 	}
 	
 }

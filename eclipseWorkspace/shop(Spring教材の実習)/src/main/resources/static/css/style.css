@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+
+
+table.item{
+	border: 1px solid darkblue;
+	border-collapse: collapse;
+}
+
+table.item th, td{
+	width: 100px;
+	border-collapse: collapse;
+	border: 1px solid darkblue;
+}
+
+.row{
+	background-color: skyblue;
+		text-align:center;
+}
+
+/* ページリンクのレイアウト*/
+
+.paging {
+	text-align: center;
+	margin: 15px 0;
+	font-size: 1rem;
+	list-style-type: none;
+}
+
+.paging li{
+	display: inline-block;
+}
+
+.paging .current,
+.paging a{
+	padding: 0 3px;
+}
+
+.paging a{
+	display: block;
+}
